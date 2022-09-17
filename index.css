@@ -1,70 +1,224 @@
-body{
-    background-color: black !important;
-}
-.inputDiv{
+:root {
 
+    --todobody: #121519;
+    --tddark: #111827;
+    --tdgreen: #448C74;
+    --tdred: #E75050;
+    --tdyellow: #EDCB50;
+    --tddark2: #1a1e23;
 }
-#input{
-    border-radius:25px;
-    border: none;
-    border-radius: 30px;
-    padding: 0.5 rem 1 rem ;
-    margin:0.25rem;
-    font-size: 1.15rem;
+
+* {
+    box-sizing: border-box;
 }
-.inputDiv button{
-    border-radius: 50px;
-    background-color: rosybrown;
+
+body {
+    background-color: var(--todobody);
 }
-h1{
-    color:rgb(211, 174, 211);
-    font-size:3rem;
+
+h1 {
+    color: var(--tdyellow);
+    font-size: 3rem;
     font-weight: 500;
     text-align: center;
-    font-family: 'Hind',sans-serif;
+    margin: 1rem 0 3rem;
+    font-family: 'Hind', sans-serif;
 }
-.title{
-    color:rgb(247, 247, 247);
+
+.btn {
+    width: 100%;
+    background-color: inherit;
+    border: none;
+    font-weight: 400;
+    font-size: 1.5rem;
+    transition: 1s;
+}
+
+.btn:hover {
+
+
+    transform: scale(1.4);
+}
+
+.btn:active {
+    transform: translateY(0.5rem);
+
+}
+
+.deleteButton {
+
+
+    color: var(--tdred);
+
+}
+
+.checkButton {
+    color: var(--tdgreen);
+}
+
+.editButton {
+    color: var(--tdyellow);
+}
+
+
+
+.title {
+    color: var(--tdgreen);
     text-transform: uppercase;
     font-weight: 800;
 }
-.card{
-    background-color: inherit !important;
-    border:none;
-    align-items: center;
-    margin-bottom: 1rem;   
+
+.add {
+    border-radius: 50px;
+    background-color: #E75050;
 }
-.card-body{
+
+.inputDiv {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    color: aqua;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 20px;
-    background-color: rgb(48, 48, 48);
-    box-shadow: 1px 2px 3px 3px rosybrown;
+    justify-content: center;
+
+
 }
-.btn{
+
+.inputDiv div {
+    position: fixed;
+
+
+
+}
+
+.nav-link {
+    font-size: 20px;
+    color: aqua !important;
+    font-weight: 500;
+}
+
+
+
+.active {
+
+    background-color: var(--tdred) !important;
+    font-weight: 700;
+    border-radius: 50px !important;
+    transition: 2s;
+    transform: translateY(0.3rem);
+}
+
+.input {
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: none;
+
+    border-radius: 25px;
+
+    margin: 0.25rem;
+    transition: .5s;
+    font-size: 1.15rem;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+
+    margin: 1rem;
+
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px 1px var(--tdyellow);
+    background-color: var(--tddark2);
+
+    color: aqua;
+    align-items: center;
+
+}
+
+.card-body:hover {
+    transform: scale(1.1);
+    transition: 2s;
+    box-shadow: 1px 1px 2px 5px var(--tdyellow);
+    background-color: var(--tddark);
+}
+
+.card-body p {
+    overflow: hidden;
+    text-align: center;
+}
+
+.card {
+    border-radius: 25px;
+    align-items: center;
+
+    /* fallback for old browsers */
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, var(--todobody) var(--tdgreen) var(--tdyellow));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border: none;
+
+    box-shadow: 1x 2px 3px 3px #2d363e;
+    margin-bottom: 1rem;
+}
+
+.mainDiv {
+    position: relative;
+
+}
+
+@media screen and (max-width: 770px) {
+
+    .inputDiv div {
+        position: relative;
+
+
+
+    }
+
+    .inputDiv {
+        margin-bottom: 5rem;
+    }
+}
+
+
+/* .btn {
     width: 100%;
     background-color: inherit;
-    border:none;
+    border: none;
+} */
+
+/* .checkButton::after {
+    font-family: "Font Awesome 6 Free";
     font-weight: 400;
-    transition: 1s;
+    font: var(--fa-font-solid);
+    content: "\f058";
+    font-size: 1.5rem;
+    color: var(--tdgreen);
 }
-.btn:hover{   
+.deleteButton::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+    font: var(--fa-font-solid);
+    content: "\f1f8";
+    font-size: 1.5rem;
+    color: #E75050;
+    transform: (1);
+    transition: 1sn;
+}
+.btn:hover {
+    transform: translateY(1rem);
+    transition: 1s;
     transform: scale(1.4);
 }
-.btn:active{
+.btn:active {
     transform: translateY(0.5rem);
+    transition: 1s;
 }
-.deleteButton{
-    color: rgb(180, 180, 180);
-}
-.editButton{
-    color: rgb(255, 255, 255);
-}
-.checkButton{
-    color: rgb(255, 255, 255);
-}
+.editButton::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+    font: var(--fa-font-solid);
+    content: "\f044";
+    font-size: 1.5rem;
+    color: var(--tdyellow);
+} */
